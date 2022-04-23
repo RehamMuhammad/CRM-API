@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/RehamMuhammad/CRM-API/issues"
   },
-  "homepage": "https://github.com/RehamMuhammad/CRM-API#readme"
+  "homepage": "https://github.com/RehamMuhammad/CRM-API#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
