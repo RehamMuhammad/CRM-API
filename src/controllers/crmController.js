@@ -23,9 +23,17 @@ export const getContacts = (req, res) => {
     })
 }
 
-
 export const getContactByID = (req, res) => {
     Contact.findById(req.params.contactID , (err, contact) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json(contact);
+    })
+}
+
+export const updateContact = (req, res) => {
+    Contact.findOneAndUpdate({ _id: req.params.contactID}, req.body, {new: true, useFindAndModify: false} , (err, contact) => {
         if (err) {
             res.send(err);
         }
