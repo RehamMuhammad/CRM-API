@@ -14,12 +14,21 @@ export const addNewContact = (req, res) => {
     })
 }
 
-
 export const getContacts = (req, res) => {
     Contact.find({}, (err, contacts) => {
         if (err) {
             res.send(err);
         }
         res.json(contacts);
+    })
+}
+
+
+export const getContactByID = (req, res) => {
+    Contact.findById(req.params.contactID , (err, contact) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json(contact);
     })
 }
